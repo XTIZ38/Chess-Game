@@ -1,4 +1,4 @@
-                                                                                   #JEU D'ECHECS PAR ALLAN ET RIYAD
+#JEU D'ECHECS PAR ALLAN ET RIYAD
 
 
 ###Lancer une Partie
