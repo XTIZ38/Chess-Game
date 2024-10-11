@@ -68,7 +68,7 @@ class Board:
         if self.is_in_check(self.current_turn):
             self.board[start_row][start_col] = piece
             self.board[end_row][end_col] = temp
-            print("Ca serai bete de se mettre tout seul en echec, non ?")
+            print("Ca serai bete de se mettre tout seul en echec (ou de le rester), non ?")
             return False
 
         self.current_turn = 'nwar' if self.current_turn == 'blanc' else 'blanc'
