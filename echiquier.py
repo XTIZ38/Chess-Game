@@ -98,6 +98,7 @@ class Board:
             for j in range(8):
                 piece = self.board[i][j]
                 if piece and piece.color != color and piece.can_move((i, j), king_position, self.board):
+                    print('Échec')
                     return True
 
         return False
