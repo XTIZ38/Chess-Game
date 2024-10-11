@@ -8,7 +8,7 @@ from pieces import *
 def gameloop(board):
     while True:
 
-        print(f"                                           C'est au tour des {board.current_turn}s. \n \n \n")
+        print(f"                                           C'est au tour de {board.current_turn_name}. \n \n \n")
         board.display()
         try:
             start_row, start_col = map(int, input("\n \n Quelle piece bouge ? (ligne colonne): ").split())
@@ -25,6 +25,8 @@ def gameloop(board):
 
 
 def main():
-    board = Board()
+    whitename = str(input('Nom du joueur blanc:   '))
+    blackname = str(input('Nom du joueur noir:   '))
+    board = Board(whitename, blackname)
     board.display()
     gameloop(board)
