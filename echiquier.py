@@ -2,9 +2,12 @@ import shutil
 from pieces import *
 
 class Board:
-    def __init__(self):
+    def __init__(self, whitename, blackname):
         self.board = self.create_board()
         self.current_turn = 'blanc'
+        self.whitename = whitename
+        self.blackname = blackname
+        self.current_turn_name = whitename
 
     def create_board(self):
         board = [[None] * 8 for i in range(8)]
@@ -36,7 +39,7 @@ class Board:
 
         print(" " * padding + "  0 1 2 3 4 5 6 7")
         for i, row in enumerate(self.board):
-            row_str = " ".join([str(piece) if piece else '.' for piece in row])
+            row_str = " ".join([str(piece) if piece else '-' for piece in row])
             print(" " * padding + f"{i} {row_str} {i}")
         print(" " * padding + "  0 1 2 3 4 5 6 7")
 
@@ -69,6 +72,7 @@ class Board:
             return False
 
         self.current_turn = 'nwar' if self.current_turn == 'blanc' else 'blanc'
+        self.current_turn_name = self.blackname if self.current_turn_name == self.whitename else self.whitename
         return True
 
     def is_in_check(self, color):
